@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import TwootItem from "./TwootItem";
-import CreateTwootPanel from "./CreateTwootPanel";
-
+import TwootItem from "@/components/TwootItem";
+import CreateTwootPanel from "@/components/CreateTwootPanel";
+import { users } from "../assets/users";
 export default {
 	name: "UserProfile",
 	components: {
@@ -39,35 +39,10 @@ export default {
 	data() {
 		return {
 			followers: 0,
-			user: {
-				id: 1,
-				username: "_AhsanAUA",
-				firstName: "Ahsan",
-				lastName: "Faisal",
-				email: "auawgamers@gmail.com",
-				isAdmin: true,
-				twoots: [
-					{
-						id: 1,
-						content: "Twiter App made by me",
-					},
-					{
-						id: 2,
-						content: "Hello World",
-					},
-				],
-			},
+			user: users[this.$route.params.userId - 1],
 		};
 	},
-	watch: {
-		followers(newFollowersCount, oldFollowersCount) {
-			if (oldFollowersCount < newFollowersCount) {
-				console.log(
-					`${this.user.username} has gained a follower! Total Followers: ${this.followers}`
-				);
-			}
-		},
-	},
+
 	methods: {
 		toggleFavourite(id) {
 			console.log(`Favourited tweet with id ${id}`);
@@ -75,7 +50,7 @@ export default {
 		addTwoot(content) {
 			this.user.twoots.unshift({
 				id: this.user.twoots.length + 1,
-				content: content,
+				body: content,
 			});
 		},
 	},

@@ -3,7 +3,7 @@
 		<div class="twoot-wrapper">
 			<p class="twoot-wrapper__username">@_{{ username }}</p>
 			<p class="twoot-wrapper__content">
-				{{ twoot.content }}
+				{{ twoot.body }}
 			</p>
 		</div>
 	</div>
