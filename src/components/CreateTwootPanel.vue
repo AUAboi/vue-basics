@@ -29,7 +29,16 @@
 				</option>
 			</select>
 			<br />
-			<button class="user-profile__submit" type="submit">Twoot</button>
+			<button
+				v-if="state.invalidContent"
+				class="user-profile__submit"
+				type="submit"
+			>
+				Twoot
+			</button>
+			<button v-else class="user-profile__submit -invalid" disabled>
+				Twoot
+			</button>
 		</div>
 	</form>
 </template>
@@ -43,7 +52,7 @@ export default {
 		const state = reactive({
 			newTwootContent: "",
 			selectedTwootType: "instant",
-			invalidContent: Boolean,
+			invalidContent: true,
 			twootTypes: [
 				{
 					value: "draft",
@@ -113,6 +122,10 @@ export default {
 .user-profile__submit {
 	padding: 0.3rem;
 	margin: 0.4rem;
+
+	&.-invalid {
+		opacity: 0.4;
+	}
 }
 
 .user-profile__twoots-wrapper {
