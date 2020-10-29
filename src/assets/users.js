@@ -46,12 +46,43 @@ export const users = [
     lastName: "Faisal",
     email: "chunjaboi@gmail.com",
     isAdmin: false,
-    twoots: [],
+    twoots: [
+      {
+        id: 1,
+        body: "#ChunjForPresident2020",
+      },
+      {
+        id: 2,
+        body: "#ChunjForPresident2020",
+      },
+      {
+        id: 3,
+        body: "#ChunjForPresident2020",
+      },
+      {
+        id: 4,
+        body: "#ChunjForPresident2020",
+      },
+    ],
+  },
+  {
+    id: 4,
+    username: "ocmaymay",
+    firstName: "Awais",
+    lastName: "Faisal",
+    email: "maymay@gmail.com",
+    isAdmin: false,
+    twoots: [
+      {
+        id: 1,
+        body: "amlazy",
+      },
+    ],
   },
 ];
 
-fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
-  res.json().then((json) => {
-    users[2].twoots = json;
-  });
-});
+// fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
+//   res.json().then((json) => {
+//     users[2].twoots = json;
+//   });
+// });

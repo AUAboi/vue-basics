@@ -85,5 +85,9 @@ export default {
 		padding: 0.2rem;
 		width: fit-content;
 	}
+	.user-profile__twoots-wrapper {
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+	}
 }
 </style>

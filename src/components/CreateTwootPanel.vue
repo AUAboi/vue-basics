@@ -3,7 +3,7 @@
 		class="user-profile__create-twoot"
 		:class="{
 			'--exceeded':
-				newTwootCharacterCount > 180 || state.invalidContent == true,
+				newTwootCharacterCount > 180 || state.invalidContent !== true,
 		}"
 		@submit.prevent="createNewTwoot"
 	>
@@ -15,6 +15,7 @@
 			@keyup="checkContent"
 			v-model="state.newTwootContent"
 		></textarea>
+		<p v-if="!state.invalidContent">Jojo Reference Required</p>
 
 		<div class="user-profile__create-twoot-type">
 			<label for="newTwootType"><strong>Type</strong></label>
@@ -42,7 +43,7 @@ export default {
 		const state = reactive({
 			newTwootContent: "",
 			selectedTwootType: "instant",
-			invalidContent: false,
+			invalidContent: Boolean,
 			twootTypes: [
 				{
 					value: "draft",
