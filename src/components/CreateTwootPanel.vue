@@ -1,13 +1,20 @@
 <template>
 	<form
 		class="user-profile__create-twoot"
-		:class="{ '--exceeded': newTwootCharacterCount > 180 }"
+		:class="{
+			'--exceeded':
+				newTwootCharacterCount > 180 || state.invalidContent == true,
+		}"
 		@submit.prevent="createNewTwoot"
 	>
 		<label for="newTwoot"
 			><strong>New Twoot</strong> ({{ newTwootCharacterCount }}/180)</label
 		>
-		<textarea id="newTwoot" v-model="state.newTwootContent"></textarea>
+		<textarea
+			id="newTwoot"
+			@keyup="checkContent"
+			v-model="state.newTwootContent"
+		></textarea>
 
 		<div class="user-profile__create-twoot-type">
 			<label for="newTwootType"><strong>Type</strong></label>
@@ -35,6 +42,7 @@ export default {
 		const state = reactive({
 			newTwootContent: "",
 			selectedTwootType: "instant",
+			invalidContent: false,
 			twootTypes: [
 				{
 					value: "draft",
@@ -48,7 +56,6 @@ export default {
 		});
 
 		const newTwootCharacterCount = computed(() => state.newTwootContent.length);
-
 		function createNewTwoot() {
 			if (state.newTwootContent && state.selectedTwootType !== "draft") {
 				ctx.emit("add-twoot", state.newTwootContent);
@@ -58,9 +65,43 @@ export default {
 			state.newTwootContent = "";
 		}
 
+		function checkContent() {
+			let string = state.newTwootContent.toLowerCase();
+			let keywords = [
+				"jojo",
+				"refrence",
+				"muda",
+				"ora",
+				"arrivederci",
+				"wry",
+				"yare",
+				"daze",
+				"menacing",
+				"omg",
+				"yes!",
+				"no!",
+				"i am!",
+				"i am",
+				"great",
+				"stand",
+				"powa",
+				"requiem",
+			];
+			for (var keyword of keywords) {
+				let str_pos = string.indexOf(keyword);
+				if (str_pos > -1) {
+					state.invalidContent = true;
+					break;
+				} else {
+					state.invalidContent = false;
+				}
+			}
+		}
+
 		return {
 			state,
 			newTwootCharacterCount,
+			checkContent,
 			createNewTwoot,
 		};
 	},

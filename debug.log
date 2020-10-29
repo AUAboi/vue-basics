@@ -3,3 +3,22 @@
 [1019/003442.897:ERROR:exception_snapshot_win.cc(99)] thread ID 10268 not found in process
 [1022/193204.353:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1026/132429.468:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001732.825:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 5660 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 5680 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 7032 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 2660 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 12920 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 8972 not found in process
+[1027/001734.168:ERROR:exception_snapshot_win.cc(99)] thread ID 11128 not found in process
+[1027/001734.215:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1027/001734.215:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1027/001734.215:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1027/193137.692:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1028/134530.694:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

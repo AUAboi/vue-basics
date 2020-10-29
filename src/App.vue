@@ -4,23 +4,25 @@
 			<router-link to="/">
 				<h1 class="title">Twiter</h1>
 			</router-link>
-			<router-link to="user/1">
-				<h3 id="username">{{ user.username }}</h3>
-			</router-link>
+			<div>
+				<h3 id="username" v-if="user">{{ user.username }}</h3>
+			</div>
 		</header>
 	</div>
 	<router-view />
 </template>
 
 <script>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
 export default {
 	name: "App",
-
-	data() {
+	setup() {
+		const store = useStore();
+		const user = computed(() => store.state.User.user);
 		return {
-			user: {
-				username: "_AhsanAUA",
-			},
+			user,
 		};
 	},
 };
