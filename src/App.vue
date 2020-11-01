@@ -5,7 +5,9 @@
 				<h1 class="title">Twiter</h1>
 			</router-link>
 			<div>
-				<h3 id="username" v-if="user">{{ user.username }}</h3>
+				<router-link :to="{ name: 'UserProfile', params: { userId: '1' } }">
+					<h3 id="username" v-if="user">{{ user.username }}</h3>
+				</router-link>
 			</div>
 		</header>
 	</div>

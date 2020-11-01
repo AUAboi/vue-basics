@@ -3,6 +3,7 @@
 		<div class="user-profile__main">
 			<div class="user-profile__name">
 				<h1>@{{ user.username }}</h1>
+				<h3>{{ $route.params.userId }}</h3>
 			</div>
 			<div class="user-profile__admin">
 				<p v-if="user.isAdmin">Admin</p>
@@ -39,10 +40,13 @@ export default {
 	data() {
 		return {
 			followers: 0,
-			user: users[this.$route.params.userId - 1],
+			myComputed: "",
+			user: null,
 		};
 	},
-
+	created() {
+		this.user = users[this.$route.params.userId - 1];
+	},
 	methods: {
 		toggleFavourite(id) {
 			console.log(`Favourited tweet with id ${id}`);
@@ -52,6 +56,11 @@ export default {
 				id: this.user.twoots.length + 1,
 				body: content,
 			});
+		},
+	},
+	watch: {
+		$route() {
+			this.user = users[this.$route.params.userId - 1];
 		},
 	},
 	computed: {
